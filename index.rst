@@ -6,8 +6,8 @@
   :name: _technology_overview
   :hidden:
 
-  what_is_nutanix/what_is_nutanix
-  nutanix_terminology/nutanix_terminology
+  #what_is_nutanix/what_is_nutanix
+  #nutanix_terminology/nutanix_terminology
 
 .. toctree::
   :maxdepth: 2
@@ -15,9 +15,9 @@
   :name: _nutanix_configuration_labs
   :hidden:
 
-  lab_nutanix_tech_overview/lab_nutanix_tech_overview
-  lab_storage_configuration/lab_storage_configuration
-  lab_network_configuration/lab_network_configuration
+  #lab_nutanix_tech_overview/lab_nutanix_tech_overview
+  #lab_storage_configuration/lab_storage_configuration
+  #lab_network_configuration/lab_network_configuration
 
 .. toctree::
   :maxdepth: 2
@@ -36,8 +36,8 @@
   :name: _monitoring_and_managing_the_environment
   :hidden:
 
-  monitoring_and_managing_env/monitoring_and_managing_env
-  lab_monitoring_env/lab_monitoring_env
+  #monitoring_and_managing_env/monitoring_and_managing_env
+  #lab_monitoring_env/lab_monitoring_env
   
 
 .. toctree::
@@ -46,9 +46,9 @@
   :name: _optional_labs
   :hidden:
 
-  authentication/authentication
-  calm/calm
-  flow/flow
+  #authentication/authentication
+  #calm/calm
+  #flow/flow
 
 
 .. toctree::
