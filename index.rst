@@ -1,23 +1,23 @@
-#.. title:: Introduction to Nutanix AHV
+.. title:: Introduction to Nutanix AHV
 
-#.. toctree::
-  #:maxdepth: 2
-  #:caption: Nutanix技术概览
-  #:name: _technology_overview
-  #:hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: Nutanix技术概览
+  :name: _technology_overview
+  :hidden:
 
-  #what_is_nutanix/what_is_nutanix
-  #nutanix_terminology/nutanix_terminology
+  what_is_nutanix/what_is_nutanix
+  nutanix_terminology/nutanix_terminology
 
-#.. toctree::
-  #:maxdepth: 2
-  #:caption: 通用配置实验
-  #:name: _nutanix_configuration_labs
-  #:hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: 通用配置实验
+  :name: _nutanix_configuration_labs
+  :hidden:
 
-  #lab_nutanix_tech_overview/lab_nutanix_tech_overview
-  #lab_storage_configuration/lab_storage_configuration
-  #lab_network_configuration/lab_network_configuration
+  lab_nutanix_tech_overview/lab_nutanix_tech_overview
+  lab_storage_configuration/lab_storage_configuration
+  lab_network_configuration/lab_network_configuration
 
 .. toctree::
   :maxdepth: 2
@@ -30,32 +30,32 @@
   lab_manage_workloads/lab_manage_workloads
   lab_data_protection/lab_data_protection
   ssp/ssp
-#.. toctree::
-  #:maxdepth: 2
-  #:caption: 监控和管理实验
-  #:name: _monitoring_and_managing_the_environment
-  #:hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: 监控和管理实验
+  :name: _monitoring_and_managing_the_environment
+  :hidden:
 
-  #monitoring_and_managing_env/monitoring_and_managing_env
-  #lab_monitoring_env/lab_monitoring_env
+  monitoring_and_managing_env/monitoring_and_managing_env
+  lab_monitoring_env/lab_monitoring_env
   
 
-#.. toctree::
-  #:maxdepth: 2
-  #:caption: 可选高级实验
-  #:name: _optional_labs
-  #:hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: 可选高级实验
+  :name: _optional_labs
+  :hidden:
 
-  #authentication/authentication
-  #calm/calm
-  #flow/flow
+  authentication/authentication
+  calm/calm
+  flow/flow
 
 
-#.. toctree::
-  #:maxdepth: 2
-  #:caption: 附录
-  #:name: _appendix
-  #:hidden:
+.. toctree::
+  :maxdepth: 2
+  :caption: 附录
+  :name: _appendix
+  :hidden:
 
   appendix/glossary
   appendix/basics
