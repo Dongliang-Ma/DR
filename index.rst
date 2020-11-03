@@ -1,15 +1,15 @@
-.. title:: Introduction to Nutanix AHV
+#.. title:: Introduction to Nutanix AHV
 
-.. toctree::
+#.. toctree::
   :maxdepth: 2
   :caption: Nutanix技术概览
   :name: _technology_overview
   :hidden:
 
-  what_is_nutanix/what_is_nutanix
+ # what_is_nutanix/what_is_nutanix
   nutanix_terminology/nutanix_terminology
 
-.. toctree::
+#.. toctree::
   :maxdepth: 2
   :caption: 通用配置实验
   :name: _nutanix_configuration_labs
@@ -30,7 +30,7 @@
   lab_manage_workloads/lab_manage_workloads
   lab_data_protection/lab_data_protection
   ssp/ssp
-.. toctree::
+#.. toctree::
   :maxdepth: 2
   :caption: 监控和管理实验
   :name: _monitoring_and_managing_the_environment
@@ -40,7 +40,7 @@
   lab_monitoring_env/lab_monitoring_env
   
 
-.. toctree::
+#.. toctree::
   :maxdepth: 2
   :caption: 可选高级实验
   :name: _optional_labs
@@ -51,7 +51,7 @@
   flow/flow
 
 
-.. toctree::
+#.. toctree::
   :maxdepth: 2
   :caption: 附录
   :name: _appendix
