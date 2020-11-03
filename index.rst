@@ -1,23 +1,23 @@
 #.. title:: Introduction to Nutanix AHV
 
 #.. toctree::
-  :maxdepth: 2
-  :caption: Nutanix技术概览
-  :name: _technology_overview
-  :hidden:
+  #:maxdepth: 2
+  #:caption: Nutanix技术概览
+  #:name: _technology_overview
+  #:hidden:
 
- # what_is_nutanix/what_is_nutanix
-  nutanix_terminology/nutanix_terminology
+  #what_is_nutanix/what_is_nutanix
+  #nutanix_terminology/nutanix_terminology
 
 #.. toctree::
-  :maxdepth: 2
-  :caption: 通用配置实验
-  :name: _nutanix_configuration_labs
-  :hidden:
+  #:maxdepth: 2
+  #:caption: 通用配置实验
+  #:name: _nutanix_configuration_labs
+  #:hidden:
 
-  lab_nutanix_tech_overview/lab_nutanix_tech_overview
-  lab_storage_configuration/lab_storage_configuration
-  lab_network_configuration/lab_network_configuration
+  #lab_nutanix_tech_overview/lab_nutanix_tech_overview
+  #lab_storage_configuration/lab_storage_configuration
+  #lab_network_configuration/lab_network_configuration
 
 .. toctree::
   :maxdepth: 2
@@ -31,31 +31,31 @@
   lab_data_protection/lab_data_protection
   ssp/ssp
 #.. toctree::
-  :maxdepth: 2
-  :caption: 监控和管理实验
-  :name: _monitoring_and_managing_the_environment
-  :hidden:
+  #:maxdepth: 2
+  #:caption: 监控和管理实验
+  #:name: _monitoring_and_managing_the_environment
+  #:hidden:
 
-  monitoring_and_managing_env/monitoring_and_managing_env
-  lab_monitoring_env/lab_monitoring_env
+  #monitoring_and_managing_env/monitoring_and_managing_env
+  #lab_monitoring_env/lab_monitoring_env
   
 
 #.. toctree::
-  :maxdepth: 2
-  :caption: 可选高级实验
-  :name: _optional_labs
-  :hidden:
+  #:maxdepth: 2
+  #:caption: 可选高级实验
+  #:name: _optional_labs
+  #:hidden:
 
-  authentication/authentication
-  calm/calm
-  flow/flow
+  #authentication/authentication
+  #calm/calm
+  #flow/flow
 
 
 #.. toctree::
-  :maxdepth: 2
-  :caption: 附录
-  :name: _appendix
-  :hidden:
+  #:maxdepth: 2
+  #:caption: 附录
+  #:name: _appendix
+  #:hidden:
 
   appendix/glossary
   appendix/basics
@@ -77,18 +77,12 @@
     - AOS 5.8
     - PC 5.7.1
 
-- 可选部分的动手实验室更新:
-    - Calm
-    - Flow
-
 实验目录
 ++++++
 
 - 实验室环境介绍
-- Nutanix技术概述
-- 如何进行配置
 - 如何部署和管理工作负载
-- 如何监测和管理环境
+
 
 
 实验环境细节
