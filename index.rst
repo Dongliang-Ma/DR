@@ -21,7 +21,7 @@
 
 .. toctree::
   :maxdepth: 2
-  :caption: 工作负载管理实验
+  :caption: 容灾方案实验
   :name: _deploying_and_managing_workloads
   :hidden:
 
@@ -57,8 +57,8 @@
   :name: _appendix
   :hidden:
 
-  appendix/glossary
-  appendix/basics
+  #appendix/glossary
+  #appendix/basics
 
 .. _前言:
 
@@ -70,58 +70,42 @@
 
 在训练营结束时，与会者应该可以对Nutanix企业云堆栈的基本概念和技术有所了解，并且能够有能力进行现场或利用远程环境进行POC或日常进行系统管理的能力。
 
-更新日志
-++++++++++
+初始化设置
++++++++++++++
 
-- 训练营的环境已经针对以下软件版本进行更新:
-    - AOS 5.8
-    - PC 5.7.1
+- 记下使用的密码 *Passwords* 
+- 登录连接到实验环境
 
-实验目录
-++++++
-
-- 实验室环境介绍
-- 如何部署和管理工作负载
-
-
-
-实验环境细节
+环境细节信息
 +++++++++++++++++++
 
-Nutanix实验室将会在Nutanix HPOC或现场实验环境中运行，实验讲师将为您的群集配置完成练习所需的所有必要镜像，连接网络和VM。
+Nutanix Bootcamp旨在在Nutanix托管POC环境中运行。 将为您的群集提供完成练习所需的所有必要镜像，网络和虚拟机。
 
-
-网络环境（待更新）
+网络
 ..........
 
-托管POC集群环境的通用命名规则:
+Hosted POC 集群遵循标准的命名原则:
 
-- **群集名称** - POC\ *XYZ*
-- **子网** - 10.**21**.\ *XYZ*\ .0
-- **群集IP** - 10.**21**.\ *XYZ*\ .37
+- **Cluster Name** - POC\ *XYZ*
+- **Subnet** - 10.**21**.\ *XYZ*\ .0
+- **Cluster IP** - 10.**21**.\ *XYZ*\ .37
 
-例如:
-
-- **群集名称** - POC055
-- **子网** - 10.21.55.0
-- **群集IP** - 10.21.55.37
-
-在动手实验中，有多个实验场景需要用*XYZ*替换子网的正确八位字节:
+在整个Workshop中，有多个实例需要用子网的正确八位位组替换 *XYZ*，例如：
 
 .. list-table::
    :widths: 25 75
    :header-rows: 1
 
-   * - IP地址
-     - 说明
+   * - IP Address
+     - Description
    * - 10.21.\ *XYZ*\ .37
-     - Nutanix群集虚拟IP
+     - Nutanix Cluster Virtual IP
    * - 10.21.\ *XYZ*\ .39
      - **PC** VM IP, Prism Central
    * - 10.21.\ *XYZ*\ .40
-     - **DC** VM IP, NTNXLAB.local 域控制器
+     - **DC** VM IP, NTNXLAB.local Domain Controller
 
-每个群集配置有2个VLAN，可用于VM:
+每个集群有 2 个VLANs 供VM使用:
 
 .. list-table::
   :widths: 25 25 10 40
@@ -129,29 +113,29 @@ Nutanix实验室将会在Nutanix HPOC或现场实验环境中运行，实验讲�
 
   * - Network Name
     - Address
-      - VLAN
-      - DHCP Scope
-  * - 主地址
+    - VLAN
+    - DHCP Scope
+  * - Primary
     - 10.21.\ *XYZ*\ .1/25
     - 0
     - 10.21.\ *XYZ*\ .50-10.21.\ *XYZ*\ .124
-  * - 次地址
+  * - Secondary
     - 10.21.\ *XYZ*\ .129/25
     - *XYZ1*
     - 10.21.\ *XYZ*\ .132-10.21.\ *XYZ*\ .253
 
-密码
+用户凭据
 ...........
 
-.. 注意::
+.. note::
 
-  *<Cluster Password>* 对每个群集都是唯一的，将由Workshop的负责人提供
+  *<Cluster Password>* 对每个集群是唯一的，由讲师提供.
 
 .. list-table::
    :widths: 25 35 40
    :header-rows: 1
 
-   * - 密码
+   * - Credential
      - Username
      - Password
    * - Prism Element
@@ -167,13 +151,11 @@ Nutanix实验室将会在Nutanix HPOC或现场实验环境中运行，实验讲�
      - nutanix
      - *<Cluster Password>*
 
-每个群集都有一个专用的域控制器VM，** DC **，负责为** NTNXLAB.local **域提供AD服务。该域包含以下用户和组：
-
-
+每个集群有一个专门的 domain controller VM, **DC**, 负责向 **NTNXLAB.local** 域提供 AD 服务。域中填充了以下用户和组：
 .. list-table::
    :widths: 25 35 40
    :header-rows: 1
-
+   
    * - Group
      - Username(s)
      - Password
@@ -186,45 +168,79 @@ Nutanix实验室将会在Nutanix HPOC或现场实验环境中运行，实验讲�
    * - SSP Developers
      - devuser01-devuser25
      - nutanix/4u
-   * - SSP Power Users
-     - poweruser01-poweruser25
+   * - SSP Consumers
+     - consumer01-consumer25
      - nutanix/4u
-   * - SSP Basic Users
-     - basicuser01-basicuser25
+   * - SSP Operators
+     - operator01-operator25
+     - nutanix/4u
+   * - SSP Custom
+     - custom01-custom25
+     - nutanix/4u
+   * - Bootcamp Users
+     - user01-user25
      - nutanix/4u
 
-#访问说明
-#+++++++++++++++++++
+接入环境指导
++++++++++++++++++++
 
-#可以通过多种不同方式访问Nutanix Hosted POC环境:
+The Nutanix Hosted POC 环境有很多方法可以接入：
 
-#Citrix XenDesktop
-#.................
+Lab 接入用户凭据
+...........................
 
-#https://citrixready.nutanix.com - *Accessible via the Citrix Receiver client or HTML5*
+PHX Based Clusters:
+**Username:** PHX-POCxxx-User01 (up to PHX-POCxxx-User20), **Password:** *<有讲师提供>*
 
-#**Nutanix Employees** - Use your NUTANIXDC credentials
-
-#**Non-Employees** - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
-
-#Employee Pulse Secure VPN
-#..........................
-
-#https://sslvpn.nutanix.com - Use your CORP credentials
-
-#Non-Employee Pulse Secure VPN
-#..............................
-
-#https://lab-vpn.nutanix.com - **Username:** POCxxx-User01 (up to POCxxx-User20), **Password:** *<Provided by Instructor>*
-
-#Under **Client Application Sessions**, click **Start** to the right of **Pulse Secure** to download the client.
-
-#Install and open **Pulse Secure**.
-
-#Add a connection:
-
-#- **Type** - Policy Secure (UAC) or Connection Server
-#- **Name** - HPOC VPN
-#- **Server URL** - lab-vpn.nutanix.com
+RTP Based Clusters:
+**Username:** RTP-POCxxx-User01 (up to RTP-POCxxx-User20), **Password:** *<由讲师提供>*
 
 
+**Non-Employees** - Use **Lab Access User** Credentials
+
+Employee Pulse Secure VPN
+..........................
+
+下载客户端:
+
+PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
+
+RTP Based Clusters Login to: https://xld-useast1.nutanix.com
+
+部署客户端
+
+在Pulse Secure 客户端, **Add** 一个连接:
+
+For PHX:
+
+- **Type** - Policy Secure (UAC) or Connection Server
+- **Name** - X-Labs - PHX
+- **Server URL** - xlv-uswest1.nutanix.com
+
+For RTP:
+
+- **Type** - Policy Secure (UAC) or Connection Server
+- **Name** - X-Labs - RTP
+- **Server URL** - xlv-useast1.nutanix.com
+
+Frame VDI
+.........
+
+Login to: https://frame.nutanix.com/x/labs
+
+**Nutanix Employees** - Use your **NUTANIXDC** credentials
+**Non-Employees** - Use **Lab Access User** Credentials
+
+Parallels VDI
+.................
+
+PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
+
+RTP Based Clusters Login to: https://xld-useast1.nutanix.com
+
+Nutanix Version Info
+++++++++++++++++++++
+
+- **AHV Version** - AHV 20170830.337
+- **AOS Version** - 5.11.2.3
+- **PC Version** - 5.11.2.1
