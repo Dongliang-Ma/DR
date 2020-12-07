@@ -223,14 +223,6 @@ For RTP:
 - **Name** - X-Labs - RTP
 - **Server URL** - xlv-useast1.nutanix.com
 
-Frame VDI
-.........
-
-Login to: https://frame.nutanix.com/x/labs
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** Credentials
-
 Parallels VDI
 .................
 
