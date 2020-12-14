@@ -22,7 +22,7 @@ Nutanix的镜像服务是用来存储您的构建ISO以及您创建的磁盘映�
 
 填写以下字段，然后单击**Upload File**:
 
-- **Enter Image URL** - http://10.20.134.222/images/CentOS-7-x86_64-Minimal-1804.iso
+- **Enter Image URL** - http://s3.amazonaws.com/get-ahv-images/CentOS7.qcow2
 #更新
 
 .. figure:: images/deploy_workloads_01.png
@@ -41,7 +41,7 @@ Nutanix的镜像服务是用来存储您的构建ISO以及您创建的磁盘映�
 
 填写以下字段，然后单击**Upload File**:
 
-- **Enter Image URL** - http://10.20.134.222/images/server_2012_r2_vl_x64_dvd_3319595.iso
+- **Enter Image URL** - cn_windows_server_2012_r2_vl_x64_dvd_3316795.iso
 #更新
 
 接下来，按提示填写以下字段，然后单击**Save**:
