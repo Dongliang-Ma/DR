@@ -4,60 +4,6 @@
 实验-工作负载部署
 -------------------------
 
-概览
-++++++++
-
-了解基本的VM部署操作
-
-镜像配置
-+++++++++++++++++++
-
-Nutanix的镜像服务是用来存储您的构建ISO以及您创建的磁盘映像（类似于VMware模板）。
-
-我们本实验使用CentOS ISO上传作为镜像并用于部署VM。
-
-在**Prism Central > Explore**, 点击**Images**.
-
-然后点击**Add Image**, 选择**URL**方式.
-
-填写以下字段，然后单击**Upload File**:
-
-- **Enter Image URL** - http://s3.amazonaws.com/get-ahv-images/CentOS7.qcow2
-#更新
-
-.. figure:: images/deploy_workloads_01.png
-
-接下来，按提示填写以下字段，然后单击**Save**:
-
-- **Image Name** - CentOS7-*initials*
-- **Image Type** - ISO
-- **Image Description** - (Optional) Add a description
-
-.. figure:: images/deploy_workloads_02.png
-
-现在我们再来上传Windows 2012 ISO，用于部署实验VM，**如果群集尚未提供此图像**
-
-点击**Add Image**, 然后选择**URL**选项.
-
-填写以下字段，然后单击**Upload File**:
-
-- **Enter Image URL** - cn_windows_server_2012_r2_vl_x64_dvd_3316795.iso
-#更新
-
-接下来，按提示填写以下字段，然后单击**Save**:
-
-- **Image Name** - Windows2012-*initials*
-- **Image Type** - ISO
-- **Image Description** - (Optional) Add a description
-
-.. note::
-
-  1）在Prism Central中的映像管理，允许您上载的镜像可同时用于所有在注册到Prism Central实例的任何群集中。
-  2）此工具还可以将VM磁盘映像转换为AHV可以理解的格式。
-  3）映像服务支持raw，vhd，vhdx，vmdk，vdi，iso和qcow2磁盘格式
-
-
-
 创建Linux VM
 +++++++++++++++++++
 
@@ -75,19 +21,14 @@ Nutanix的镜像服务是用来存储您的构建ISO以及您创建的磁盘映�
 
 .. figure:: images/deploy_workloads_03.png
 
-- 选择CDROM旁边的Edit图标：
-    - **Operation** - Clone from Image Service
-    - **Image** - CentOS7-*initials* (The Image we added above)
-    - Select **Update**
-
-.. figure:: images/deploy_workloads_04.png
 
 - 选择**+ Add New Disk**
-    - **Type** - DISK
-    - **Operation** - Allocate on Storage Container
-    - **Storage Container** - Default Container
-    - **Size (GiB)** - 30 GiB
+    - **Operation** - Clone from Image Service
+    - **Image** - CentOS
+    - Select **Update**
     - Select **Add**
+    
+.. figure:: images/deploy_workloads_04.png
 
 - 选择**Add New NIC**
     - **VLAN Name** - Primary
@@ -115,16 +56,10 @@ Nutanix的镜像服务是用来存储您的构建ISO以及您创建的磁盘映�
 - **vCPU(s)** - 2
 - **Number of Cores per vCPU** - 1
 - **Memory** - 4 GiB
-- 选择CDROM旁边的Edit图标：
-    - **Operation** - Clone from Image Service
-    - **Image** - Windows2012-*initials*
-    - 点击**Update**
-
 - 选择**+ Add New Disk**
     - **Type** - DISK
-    - **Operation** - Allocate on Storage Container
-    - **Storage Container** - Default Container
-    - **Size (GiB)** - 30 GiB
+    - **Operation** - Clone from Image Service
+    - **Image** - Windows2012
     - Select **Add**
 
 - 选择**+ Add New Disk**
