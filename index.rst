@@ -29,7 +29,7 @@
   lab_deploy_workloads/lab_deploy_workloads
   lab_manage_workloads/lab_manage_workloads
   lab_data_protection/lab_data_protection
-  ssp/ssp
+  #ssp/ssp
 .. toctree::
   :maxdepth: 2
   :caption: 监控和管理实验
